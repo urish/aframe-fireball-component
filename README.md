@@ -1,5 +1,7 @@
 # A-Frame Fireball Component
 
+[Online Demo](https://urish.github.io/aframe-fireball-component/)
+
 ## Installation
 
 Add the following line to your html file, just after loading A-Frame:
