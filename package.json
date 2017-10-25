@@ -1,10 +1,20 @@
 {
   "name": "aframe-fireball-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:urish/aframe-fireball-component.git",
   "author": "Uri Shaked <uri@salsa4fun.co.il>",
   "license": "MIT",
+  "keywords": [
+    "3d",
+    "aframe",
+    "aframe-component",
+    "aframe-vr",
+    "fireball",
+    "shader",
+    "vr",
+    "webvr"
+  ],
   "files": [
     "index.js"
   ]

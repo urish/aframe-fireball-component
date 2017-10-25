@@ -1,5 +1,7 @@
 # A-Frame Fireball Component
 
+![Firebase Shader in Action](screenshot.png)
+
 [Online Demo](https://urish.github.io/aframe-fireball-component/)
 
 ## Installation
@@ -7,6 +9,10 @@
 Add the following line to your html file, just after loading A-Frame:
 
     <script src="https://rawgit.com/urish/aframe-fireball-component/master/index.js"></script>
+
+You can also get this component through npm:
+
+    npm install --save aframe-fireball-component
 
 ## Usage
 
@@ -19,6 +25,15 @@ Advanced usage - specifying properties:
     <a-sphere position="2.5 1 -5" radius="1.25" fireball="color: red; brightness: 2; scale: 2.5"></a-sphere>
 
 See [index.html](index.html) for a complete example.
+
+## Parameters
+
+| Parameter   | Default | Description |
+|-------------|---------|-------------|
+| **brightness**  | 1.5        | Brightness level of the fireball |
+| **color**       | '#ffaa55'  | Fireball color |
+| **opacity**     | 1.0        | Fireball opacity |
+| **scale**       | 1.0        | Scaling of the generated texture. Higher values will result in more details |
 
 ## License
 
