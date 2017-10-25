@@ -53,6 +53,7 @@ precision highp int;
 
 uniform float time;
 uniform float brightness;
+uniform float opacity;
 
 varying vec3 vTexCoord3D;
 varying vec3 vNormal;
@@ -191,7 +192,7 @@ void main( void ) {
   float directionalLightWeighting = dot( normal, normalize( lDirection.xyz ) ) * 0.25 + 0.75;
   vLightWeighting += vec3( brightness ) * directionalLightWeighting;
 
-  gl_FragColor = vec4( baseColor * vLightWeighting, 1.0 );
+  gl_FragColor = vec4( baseColor * vLightWeighting, opacity );
 }
 `;
 
@@ -208,7 +209,11 @@ AFRAME.registerComponent('fireball', {
     scale: {
       type: 'float',
       default: 1
-    }
+    },
+    opacity: { 
+      type: 'float', 
+      default: 1 
+    },
   },
 
   init: function () {
@@ -217,10 +222,12 @@ AFRAME.registerComponent('fireball', {
         time: { value: 0.0 },
         color: { value: new THREE.Color(this.data.color) },
         brightness: { value: this.data.brightness },
+        opacity: { value: this.data.opacity },
         scale: { value: this.data.scale },
       },
       vertexShader: vertexShader,
       fragmentShader: fragmentShader,
+      transparent: this.data.opacity < 1,
     });
 
     this.applyToMesh();
@@ -233,6 +240,8 @@ AFRAME.registerComponent('fireball', {
     uniforms.brightness.value = data.brightness;
     uniforms.color.value.set(data.color);
     uniforms.scale.value = data.scale;
+    uniforms.opacity.value = data.opacity;
+    this.material.transparent = data.opacity < 1;
   },
 
   applyToMesh: function () {
