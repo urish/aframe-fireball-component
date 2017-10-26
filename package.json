@@ -1,10 +1,13 @@
 {
   "name": "aframe-fireball-component",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "main": "index.js",
   "repository": "git@github.com:urish/aframe-fireball-component.git",
   "author": "Uri Shaked <uri@salsa4fun.co.il>",
   "license": "MIT",
+  "scripts": {
+    "build": "buble src/fireball.js > index.js"
+  },
   "keywords": [
     "3d",
     "aframe",
@@ -17,5 +20,8 @@
   ],
   "files": [
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "buble": "^0.16.0"
+  }
 }
