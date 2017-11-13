@@ -1,6 +1,6 @@
 {
   "name": "aframe-fireball-component",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "repository": "git@github.com:urish/aframe-fireball-component.git",
   "author": "Uri Shaked <uri@salsa4fun.co.il>",
