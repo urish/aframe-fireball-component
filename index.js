@@ -67,7 +67,6 @@ AFRAME.registerComponent('fireball', {
     uniforms.brightness.value = data.brightness;
     uniforms.color.value.set(data.color);
     uniforms.scale.value = data.scale;
-    uniforms.speed.value = data.speed;
     uniforms.opacity.value = data.opacity;
     this.material.transparent = data.opacity < 1;
   },
