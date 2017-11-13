@@ -18,6 +18,7 @@ precision highp int;
 
 attribute vec2 uv2;
 
+uniform float speed;
 uniform float time;
 uniform float scale;
 
@@ -32,7 +33,7 @@ void main( void ) {
   vNormal = normalize( normalMatrix * normal );
   vViewPosition = cameraPosition - mPosition.xyz;
 
-  vTexCoord3D = scale * ( position.xyz + cameraPosition * 0.1 * time );
+  vTexCoord3D = scale * ( position.xyz + cameraPosition * speed * time );
   gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 }
 `;
@@ -214,11 +215,16 @@ AFRAME.registerComponent('fireball', {
       type: 'float', 
       default: 1 
     },
+    speed : {
+      type: 'float',
+      default: 0.1
+    }
   },
 
   init: function () {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
+        speed: {value: this.data.speed },
         time: { value: 0.0 },
         color: { value: new THREE.Color(this.data.color) },
         brightness: { value: this.data.brightness },
