@@ -22,7 +22,7 @@ Basic usage:
 
 Advanced usage - specifying properties:
 
-    <a-sphere position="2.5 1 -5" radius="1.25" fireball="color: red; brightness: 2; scale: 2.5"></a-sphere>
+    <a-sphere position="2.5 1 -5" radius="1.25" fireball="color: red; brightness: 2; scale: 2.5; speed: 0.2"></a-sphere>
 
 See [index.html](index.html) for a complete example.
 
@@ -34,6 +34,7 @@ See [index.html](index.html) for a complete example.
 | **color**       | '#ffaa55'  | Fireball color |
 | **opacity**     | 1.0        | Fireball opacity |
 | **scale**       | 1.0        | Scaling of the generated texture. Higher values will result in more details |
+| **speed**       | 0.1        | Animation speed of the generated texture. Higher values will result in faster animation |
 
 ## License
 
